@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="AbsenceV1_2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/AbsenceV1_2_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="AbsenceV1_2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.5" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.28" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.5" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="AbsenceV1_2/web/Web" />
+      <element id="javaee-facet-resources" facet="AbsenceV1_2/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

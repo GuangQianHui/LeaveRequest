@@ -1,0 +1,284 @@
+/* styles.css */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #3be3ff, #F2C9D1);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-attachment: fixed; /* 背景不随页面滚动 */
+}
+.container {
+    width: 500px;
+    padding: 40px;
+    background-color: rgba(118, 182, 29, 0); /* 带透明度的白色背景，增加透明度以更好地融合背景 */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中容器内的元素 */
+}
+
+.icon {
+    display: block;
+    /*margin: 0 auto; !* 水平居中 *!*/
+    /*margin-bottom: 2px; !* 与下方标题的间距 *!*/
+    width: 250px; /* 设置图标的宽度 */
+    /*height: 50px; !* 设置图标的高度 *!*/
+}
+/* 进一步美化标题样式 */
+.login-title {
+    font-size: 28px; /* 更大的字体 */
+    color: #ffffff; /* 白色字体 */
+    text-align: center; /* 文本居中 */
+    margin-top: 5px;
+    margin-bottom: 5px; /* 更大的下边距 */
+    text-transform: uppercase; /* 文本大写 */
+    font-weight: 700; /* 更粗的字体 */
+    letter-spacing: 4px; /* 字符间距 */
+    background: linear-gradient(to right, #ff512f, #dd2476); /* 渐变背景 */
+    -webkit-background-clip: text; /* 裁剪背景到文本形状 */
+    -webkit-text-fill-color: transparent; /* 使用透明文本颜色以显示背景 */
+    padding: 10px 0; /* 内边距 */
+}
+
+/* 添加一个简单的动画效果，使标题更加吸引人 */
+@keyframes animateTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-title {
+    animation: animateTitle 1s ease-out forwards; /* 应用动画 */
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px; /* 调整间距 */
+}
+
+.form-group label {
+    /*margin-right: 5px; !* 调整标签和输入框之间的间距 *!*/
+    display: block;
+    flex-basis: 95px;
+    /*font: 15px bold;*/
+    margin-bottom: 5px;
+    font-weight: bold; /* 加粗字体 */
+    font-size: 16px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    text-align: right; /
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: #3b82d6;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(to right, #3be3ff, #F2C9D1);
+    /*background: linear-gradient(to right, #ff9966, #ff5e62); !* 渐变背景 *!*/
+    text-transform: uppercase; /* 按钮文本大写 */
+    letter-spacing: 1px; /* 字母间距 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* 添加阴影 */
+    transition: all 0.3s ease; /* 过渡效果 */
+}
+
+.btn:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* 悬停时阴影加深 */
+}
+/* 响应式设计 */
+@media (max-width: 500px) {
+    .container {
+        width: 90%; /* 在小屏幕上调整容器宽度 */
+    }
+}
+
+.animated-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 防止几何图形阻挡鼠标事件 */
+    z-index: -1; /* 确保几何图形在内容之下 */
+}
+
+.shape {
+    position: absolute;
+}
+
+/* 圆形 */
+.circle {
+    border-radius: 50%;
+}
+
+.shape1 {
+    background: rgba(255, 0, 0, 0.5); /* 红色 */
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation: complexMoveShape1 5s ease-in-out infinite;
+}
+
+.shape4 {
+    background: rgba(71, 127, 206,0.5);
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 20%;
+    animation: moveShape 4s linear infinite reverse; /* 反向动画 */
+}
+
+/* 正方形 */
+.square {
+    /* 正方形不需要额外样式 */
+}
+
+.shape2 {
+    background: rgba(71, 127, 206,0.8);
+    width: 100px;
+    height: 100px;
+    bottom: 15%;
+    left: 25%;
+    animation: complexRotateShape 7s linear infinite;
+}
+
+.shape5 {
+    background: rgba(255, 255, 255, 0.5);
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    right: 15%;
+    animation: complexScaleShape 5s ease-in-out infinite;
+
+}
+
+/* 三角形 */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+}
+
+.shape3 {
+    border-bottom-color: rgba(255, 254, 255, 0.8);
+    top: 40%;
+    left: 5%;
+    animation: complexSkewShape 6s ease-in-out infinite;
+}
+
+.shape6 {
+    border-bottom-color: rgba(12, 255, 255, 0.8);
+    top: 55%;
+    right: 5%;
+    animation: complexOpacityShape 4s ease-in-out infinite;
+}
+
+/* 定义动画 */
+@keyframes moveShape {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes rotateShape {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes scaleShape {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes skewShape {
+    0% { transform: skewX(0deg); }
+    50% { transform: skewX(30deg); }
+    100% { transform: skewX(0deg); }
+}
+
+@keyframes opacityShape {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ...（之前的样式保持不变）... */
+
+/* 定义更复杂的动画 */
+@keyframes complexMoveShape1 {
+    0% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-50px) scale(1.1); }
+    50% { transform: translateY(0) scale(1); }
+    75% { transform: translateY(50px) scale(0.9); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes complexRotateShape {
+    0% { transform: rotate(0deg) translateX(0); }
+    25% { transform: rotate(90deg) translateX(50px); }
+    50% { transform: rotate(180deg) translateX(0); }
+    75% { transform: rotate(270deg) translateX(-50px); }
+    100% { transform: rotate(360deg) translateX(0); }
+}
+
+@keyframes complexScaleShape {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    25% { transform: scale(1.2) rotate(45deg); opacity: 0.7; }
+    50% { transform: scale(1) rotate(90deg); opacity: 1; }
+    75% { transform: scale(0.8) rotate(135deg); opacity: 0.7; }
+    100% { transform: scale(1) rotate(180deg); opacity: 1; }
+}
+
+@keyframes complexSkewShape {
+    0% { transform: skewX(0deg) translateY(0); }
+    25% { transform: skewX(15deg) translateY(-20px); }
+    50% { transform: skewX(30deg) translateY(0); }
+    75% { transform: skewX(15deg) translateY(20px); }
+    100% { transform: skewX(0deg) translateY(0); }
+}
+
+@keyframes complexOpacityShape {
+    0% { opacity: 1; transform: translateX(0); }
+    25% { opacity: 0.5; transform: translateX(20px); }
+    50% { opacity: 1; transform: translateX(0); }
+    75% { opacity: 0.5; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+

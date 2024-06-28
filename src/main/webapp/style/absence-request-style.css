@@ -1,0 +1,211 @@
+.container {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.5); /* 带透明度的白色背景，增加透明度以更好地融合背景 */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中容器内的元素 */
+}
+.container h1 {
+    letter-spacing: 10px;
+    font-size: 44px;
+    margin-top: 0;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px; /* 调整间距 */
+}
+.form-group label {
+    /*margin-right: 5px; !* 调整标签和输入框之间的间距 *!*/
+    display: block;
+    flex-basis: 110px;
+    width: auto;
+    /*font: 15px bold;*/
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-weight: bold; /* 加粗字体 */
+    font-size: 16px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    text-align: right; /
+}
+
+.form-group input {
+    /*width: 100%;*/
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: #3b82d6;
+    outline: none;
+}
+
+#reason {
+    position: relative;
+    display: inline-block;
+    padding: 13px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    outline: none;
+}
+#reason:focus {
+    border: 1px solid #3b82d6 ;
+    transform: scale(1.05);
+}
+#reason::after {
+    content: "\f107"; /*使用font-awesome图标*/
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #555;
+}
+
+#startDate {
+    cursor: text;
+}
+@media (max-width: 600px) {
+    #reason {
+        font-size: 14px;
+    }
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#submitLeaveRequest {
+    /*width: 100%;*/
+    padding: 12px;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(to right, #3be3ff, #F2C9D1);
+    /*background: linear-gradient(to right, #ff9966, #ff5e62); !* 渐变背景 *!*/
+    text-transform: uppercase; /* 按钮文本大写 */
+    letter-spacing: 1px; /* 字母间距 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* 添加阴影 */
+    transition: all 0.3s ease; /* 过渡效果 */
+}
+
+#submitLeaveRequest:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* 悬停时阴影加深 */
+}
+
+
+/* 当复选框被选中时，改变自定义复选框的样式 */
+.checkbox-custom:checked + .checkbox-custom-indicator {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* 添加一些间距和样式到标签 */
+.checkbox-label {
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* 确保在悬停或聚焦时也有良好的视觉效果 */
+.checkbox-custom-indicator:hover,
+.checkbox-custom:focus + .checkbox-custom-indicator {
+    border-color: #808080;
+}
+
+/* 当复选框被禁用时改变样式 */
+.checkbox-custom:disabled + .checkbox-custom-indicator {
+    background-color: #eeeeee;
+    border-color: #b3b3b3;
+    cursor: not-allowed;
+}
+
+/* 确保在复选框被禁用且选中时也有适当的样式 */
+.checkbox-custom:checked:disabled + .checkbox-custom-indicator {
+    background-color: #a9a9a9;
+    border-color: #a9a9a9;
+}
+
+/* 隐藏默认的复选框 */
+.checkbox-custom {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    margin: 0;
+}
+
+/* 自定义复选框的样式 */
+.checkbox-custom-indicator {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border: 2px solid #c0c0c0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/* 输入框样式 */
+input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: calc(39% - 24px); /* 减去padding和边框的宽度 */
+    /*margin-bottom: 20px;*/
+}
+
+/* 输入框聚焦时的样式 */
+input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* 输入框必填项的提示样式（如果需要） */
+input[type="date"]:required:invalid {
+    border-color: red;
+}
+
+input[type="date"]:required:valid {
+    outline: none;
+}
+#leaveRequestForm {
+    width: 50vw;
+}
+#leaveRequestForm textarea:focus {
+    border-color: #ff5e62; /* 文本域聚焦时改变边框颜色 */
+    outline: none; /* 移除默认的聚焦轮廓 */
+}
+#dorm1 #dorm2 {
+    min-width: 5px;
+}
+#leaveRequestForm textarea {
+    font-weight: 700;
+    margin-left: 15px;
+    resize: vertical; /* 允许用户垂直调整文本域大小 */
+    min-height: 15vh; /* 设置文本域的初始高度 */
+    width: 35vw;
+    padding: 10px; /* 保持内边距一致 */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease; /* 添加过渡效果 */
+}
